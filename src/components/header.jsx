@@ -18,12 +18,12 @@ function Header() {
             </ul>
             <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
               <li class="nav-item active">
-                <a class="nav-link" href="/#">
+                <a class="nav-link" href="#/">
                   Login
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/#">
+                <a class="nav-link" href="#/">
                   Cart
                 </a>
               </li>
