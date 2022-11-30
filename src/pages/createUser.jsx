@@ -8,7 +8,7 @@ import Footer from "../components/footer";
 import useGetUsersByName from "../hooks/useGetUsersByName";
 import useInsertUsers from "../hooks/useInsertUsers";
 
-function User() {
+function CreateUser() {
     //get users
     // ----------------- custom hook graphql -------------------------
     const { dataByName, loadingDataByName, errorDataByName } = useGetUsersByName();
@@ -143,4 +143,4 @@ function User() {
     );
 }
 
-export default User;
+export default CreateUser;
