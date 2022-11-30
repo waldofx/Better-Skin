@@ -45,4 +45,46 @@ const UpdateProducts = gql`
     }
 `;
 
-export { InsertProducts, DeleteProducts, UpdateProducts };
+const InsertUsers = gql`
+    mutation MyMutation($object: users_insert_input = {}) {
+        insert_users_one(object: $object) {
+            id
+            username
+            password
+            is_admin
+            email
+        }
+    }
+`;
+
+const DeleteUsers = gql`
+    mutation MyMutation($id: Int!) {
+        delete_users(where: { id: { _eq: $id } }) {
+            affected_rows
+            returning {
+                id
+                username
+                password
+                is_admin
+                email
+            }
+        }
+    }
+`;
+
+const UpdateUsers = gql`
+    mutation MyMutation2($object: users_set_input = {}, $id: Int!) {
+        update_users(_set: $object, where: { id: { _eq: $id } }) {
+            returning {
+                id
+                username
+                password
+                is_admin
+                email
+            }
+            affected_rows
+        }
+    }
+`;
+
+export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers };

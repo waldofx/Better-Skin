@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 //import pages
 import Home from "./pages/home";
 import Product from "./pages/product";
+import CreateUser from "./pages/createUser";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/product" exact component={Product} />
+                <Route path="/user" exact component={CreateUser} />
             </Switch>
         </Router>
     );
