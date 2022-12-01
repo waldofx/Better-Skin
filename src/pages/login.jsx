@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import "./login.css";
 
 const Login = () => {
     return (
@@ -8,7 +9,7 @@ const Login = () => {
             <div>
                 <Header />
             </div>
-            <div style={{ margin: "185px" }}>
+            <div>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="row justify-content-md-center">
@@ -16,11 +17,11 @@ const Login = () => {
                                 <div className="card p-4">
                                     <div className="card-body p-2">
                                         <h2>New here?</h2>
-                                        <p> Registration free and easy</p>
-                                        <p> Save multiple shipping and address</p>
-                                        <p> View and track orders</p>
+                                        <p> {'>'} Registration free and easy</p>
+                                        <p> {'>'}  Save multiple shipping and address</p>
+                                        <p> {'>'}  View and track orders</p>
                                     </div>
-                                    <a href="/register" class="btn btn-danger" type="button">Register Here</a>
+                                    <a href="/register" class="btn" type="button">Register Here</a>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -37,7 +38,7 @@ const Login = () => {
                                         </div>
 
                                     </div>
-                                    <button class="btn btn-danger mt-2 mb-3" type="button" >Login Here</button>
+                                    <button class="btn mt-2 mb-3" type="button" >Login Here</button>
                                 </div>
                             </div>
                         </div>

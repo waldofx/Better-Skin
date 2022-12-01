@@ -93,7 +93,7 @@ function CreateUser() {
                                             <input
                                                 name="email"
                                                 type="Email"
-                                                placeholder="Password"
+                                                placeholder="@gmail.com"
                                                 className="form-control"
                                                 onChange={handleChange}
                                             />
@@ -113,7 +113,7 @@ function CreateUser() {
                                             <input
                                                 name="password"
                                                 type="password"
-                                                placeholder="Confirm yout password here Password"
+                                                placeholder="Confirm your password"
                                                 className="form-control"
                                                 onChange={handleChange}
                                             />

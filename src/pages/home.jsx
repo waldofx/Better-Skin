@@ -17,18 +17,18 @@ function Home() {
                     <p>Better skin is a new approach to beauty. It's about fun and freedom and being OK with yourself today.</p>
                     <p>We make intuitive, uncomplicated products designed to live with you.</p>
                     <div id="hot" class="justify-content-center">
-                        <img src="bg2.png" class="w-5shadow-1-strong rounded " alt="bg2" />
+                        <img src="bg2.png" class="w-5shadow-1-strong rounded img-fluid img-thumbnail" alt="bg2" />
 
-                        <img src="bg3.png" class="w-5 shadow-1-strong rounded " alt="bg3" />
+                        <img src="bg3.png" class="w-5 shadow-1-strong rounded img-fluid img-thumbnail" alt="bg3" />
 
-                        <img src="bg10.png" class="w-5 shadow-1-strong rounded " alt="bg10" />
+                        <img src="bg10.png" class="w-5 shadow-1-strong rounded img-fluid img-thumbnail" alt="bg10" />
                     </div>
                     
                 </section>
                 <section id="section2">
 
                 </section>
-                <section>
+                <section id="section3">
                     <p id="new">NEW FEATURED PRODUCT</p>
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div class="col">
