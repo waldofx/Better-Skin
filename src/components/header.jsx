@@ -18,7 +18,7 @@ function Header() {
             </ul>
             <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
               <li class="nav-item active">
-                <a class="nav-link" href="#/">
+                <a class="nav-link" href="/login">
                   Login
                 </a>
               </li>

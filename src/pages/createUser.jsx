@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 //import components and styles
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -69,100 +68,61 @@ function CreateUser() {
     return (
         <div className="luar">
             <Header />
-            {/* form insert users */}
-            {/* <div className="luar-container">
-                <div className="container">
-                    <h1 className="tambah-user">Tambahkan User</h1>
-                    <form class="form" onSubmit={handleSubmit} action="">
-                        <div class="username">
-                            <label class="" for="username">
-                                Username
-                            </label>
-                            <input
-                                class=""
-                                id="username"
-                                name="username"
-                                type="text"
-                                placeholder="User Name"
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div class="password">
-                            <label class="" for="password">
-                                Password
-                            </label>
-                            <input
-                                class=""
-                                id="password"
-                                name="passwrod"
-                                type="password"
-                                placeholder="*******"
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div class="email">
-                            <label class="" for="email">
-                                Email
-                            </label>
-                            <input
-                                class=""
-                                id="email"
-                                name="email"
-                                type="text"
-                                placeholder="@email.com"
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div class="md:flex md:items-center">
-                            <button class="" type="submit">
-                                Register
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div> */}
             <div style={{ margin: "25px" }}>
                 <div className="container">
-                    <div className="row justify-content-center">
+                    <form className="row justify-content-center" onSubmit={handleSubmit} action="">
                         <div className="row justify-content-md-center">
                             <div className="col-md-4">
                                 <div className="card p-2">
                                     <div className="card-body ">
                                         <div className="form-group p-2">
                                             <label>Username</label>
-                                            <input type="text" placeholder="Username" className="form-control" />
-                                        </div>
-
-                                        <div className="form-group p-2">
-                                            <label>First Name</label>
-                                            <input type="First Name" placeholder="Password" className="form-control" />
-                                        </div>
-                                        <div className="form-group p-2">
-                                            <label>Last Name</label>
-                                            <input type="Last Name" placeholder="Password" className="form-control" />
+                                            <input
+                                                name="username"
+                                                type="text"
+                                                placeholder="Username"
+                                                className="form-control"
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                         <div className="form-group p-2">
                                             <label>Email</label>
-                                            <input type="Email" placeholder="Password" className="form-control" />
+                                            <input
+                                                name="email"
+                                                type="Email"
+                                                placeholder="Password"
+                                                className="form-control"
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                         <div className="form-group p-2">
                                             <label>Password</label>
-                                            <input type="Password" placeholder="Password" className="form-control" />
+                                            <input
+                                                name="password"
+                                                type="Password"
+                                                placeholder="Password"
+                                                className="form-control"
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                         <div className="form-group p-2">
-                                            <label>Repassword</label>
-                                            <input type="Repassword" placeholder="Password" className="form-control" />
+                                            <label>Confirm password</label>
+                                            <input
+                                                name="password"
+                                                type="password"
+                                                placeholder="Password"
+                                                className="form-control"
+                                                onChange={handleChange}
+                                            />
                                         </div>
-
                                     </div>
-                                    <button class="btn btn-danger mt-2 mb-3" type="button" >Create Password</button>
+                                    <button class="btn btn-danger mt-2 mb-3" type="submit">
+                                        Create Account
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <Footer />

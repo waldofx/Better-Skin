@@ -20,7 +20,7 @@ const Login = () => {
                                         <p> Save multiple shipping and address</p>
                                         <p> View and track orders</p>
                                     </div>
-                                    <button class="btn btn-danger" type="button">Register Here</button>
+                                    <a href="/register" class="btn btn-danger" type="button">Register Here</a>
                                 </div>
                             </div>
                             <div className="col-md-4">
