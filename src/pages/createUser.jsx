@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 //import components and styles
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -66,77 +67,103 @@ function CreateUser() {
     }
 
     return (
-        <div>
+        <div className="luar">
             <Header />
-            {/* get users */}
-            <div className="container">
-                <h1 className="">Daftar User</h1>
-                {isError && <p>Something Went Wrong...</p>}
-                {isLoading && <p>Now loading...</p>}
-                {!isError && !isLoading && (
-                    <div>
-                        {userdatas.map((userdata) => (
-                            <div className="">
-                                <p className="">username : {userdata.username}</p>
-                                <p className="">password: {userdata.password}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
-
             {/* form insert users */}
-            <div className="container">
-                <h1>Tambahkan User</h1>
-                <form class="" onSubmit={handleSubmit} action="">
-                    <div class="">
-                        <label class="" for="username">
-                            Username
-                        </label>
-                        <input
-                            class=""
-                            id="username"
-                            name="username"
-                            type="text"
-                            placeholder="User Name"
-                            onChange={handleChange}
-                            required
-                        />
+            {/* <div className="luar-container">
+                <div className="container">
+                    <h1 className="tambah-user">Tambahkan User</h1>
+                    <form class="form" onSubmit={handleSubmit} action="">
+                        <div class="username">
+                            <label class="" for="username">
+                                Username
+                            </label>
+                            <input
+                                class=""
+                                id="username"
+                                name="username"
+                                type="text"
+                                placeholder="User Name"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div class="password">
+                            <label class="" for="password">
+                                Password
+                            </label>
+                            <input
+                                class=""
+                                id="password"
+                                name="passwrod"
+                                type="password"
+                                placeholder="*******"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div class="email">
+                            <label class="" for="email">
+                                Email
+                            </label>
+                            <input
+                                class=""
+                                id="email"
+                                name="email"
+                                type="text"
+                                placeholder="@email.com"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div class="md:flex md:items-center">
+                            <button class="" type="submit">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div> */}
+            <div style={{ margin: "25px" }}>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="row justify-content-md-center">
+                            <div className="col-md-4">
+                                <div className="card p-2">
+                                    <div className="card-body ">
+                                        <div className="form-group p-2">
+                                            <label>Username</label>
+                                            <input type="text" placeholder="Username" className="form-control" />
+                                        </div>
+
+                                        <div className="form-group p-2">
+                                            <label>First Name</label>
+                                            <input type="First Name" placeholder="Password" className="form-control" />
+                                        </div>
+                                        <div className="form-group p-2">
+                                            <label>Last Name</label>
+                                            <input type="Last Name" placeholder="Password" className="form-control" />
+                                        </div>
+                                        <div className="form-group p-2">
+                                            <label>Email</label>
+                                            <input type="Email" placeholder="Password" className="form-control" />
+                                        </div>
+                                        <div className="form-group p-2">
+                                            <label>Password</label>
+                                            <input type="Password" placeholder="Password" className="form-control" />
+                                        </div>
+                                        <div className="form-group p-2">
+                                            <label>Repassword</label>
+                                            <input type="Repassword" placeholder="Password" className="form-control" />
+                                        </div>
+
+                                    </div>
+                                    <button class="btn btn-danger mt-2 mb-3" type="button" >Create Password</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="">
-                        <label class="" for="password">
-                            Password
-                        </label>
-                        <input
-                            class=""
-                            id="password"
-                            name="passwrod"
-                            type="password"
-                            placeholder="*******"
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div class="">
-                        <label class="" for="email">
-                            Email
-                        </label>
-                        <input
-                            class=""
-                            id="email"
-                            name="email"
-                            type="text"
-                            placeholder="@email.com"
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div class="md:flex md:items-center">
-                        <button class="" type="submit">
-                            Register
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
             <Footer />
         </div>
