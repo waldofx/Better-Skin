@@ -105,7 +105,7 @@ function CreateUser() {
                                                 type="Password"
                                                 placeholder="Password"
                                                 className="form-control"
-                                                // onChange={handleChange}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                         <div className="form-group p-2">
@@ -120,9 +120,9 @@ function CreateUser() {
                                            
                                         </div>
                                     </div>
-                                    <a class="btn btn-danger mt-2 mb-3" type="submit" href="/login" >
+                                    <button class="btn btn-danger mt-2 mb-3" type="submit"  >
                                         Create Account
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
