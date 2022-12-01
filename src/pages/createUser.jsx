@@ -29,6 +29,7 @@ function CreateUser() {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
+        confirmPassword: "",
         is_admin: true,
         email: "",
     });
@@ -50,7 +51,9 @@ function CreateUser() {
 
         if (formData.username === "") {
             alert("Data belum lengkap!");
-        } else {
+        } else if (formData.confirmPassword != formData.password){
+            alert("Password anda tidak sama, Mohon konfirmasi password dengan benar!")
+        } else{
             insertUsers({
                 variables: {
                     object: {
@@ -68,7 +71,7 @@ function CreateUser() {
     return (
         <div className="luar">
             <Header />
-            <div style={{ margin: "25px" }}>
+            <div style={{ margin: "108px" }}>
                 <div className="container">
                     <form className="row justify-content-center" onSubmit={handleSubmit} action="">
                         <div className="row justify-content-md-center">
@@ -98,11 +101,11 @@ function CreateUser() {
                                         <div className="form-group p-2">
                                             <label>Password</label>
                                             <input
-                                                name="password"
+                                                name="confirmPassword"
                                                 type="Password"
                                                 placeholder="Password"
                                                 className="form-control"
-                                                onChange={handleChange}
+                                                // onChange={handleChange}
                                             />
                                         </div>
                                         <div className="form-group p-2">
@@ -110,15 +113,16 @@ function CreateUser() {
                                             <input
                                                 name="password"
                                                 type="password"
-                                                placeholder="Password"
+                                                placeholder="Confirm yout password here Password"
                                                 className="form-control"
                                                 onChange={handleChange}
                                             />
+                                           
                                         </div>
                                     </div>
-                                    <button class="btn btn-danger mt-2 mb-3" type="submit">
+                                    <a class="btn btn-danger mt-2 mb-3" type="submit" href="/login" >
                                         Create Account
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
