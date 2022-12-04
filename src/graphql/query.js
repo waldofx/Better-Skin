@@ -25,6 +25,18 @@ const GetUsersByName = gql`
     }
 `;
 
+const GetUsersByLogin = gql`
+    query MyQuery($username: String!, $password: String!) {
+        users(where: { username: { _eq: $username }, password: { _eq: $password } }) {
+            id
+            username
+            password
+            is_admin
+            email
+        }
+    }
+`;
+
 const GetPembayaranByTanggal = gql`
     query MyQuery {
         pembayaran(order_by: { tanggal: asc }) {
@@ -50,4 +62,4 @@ const GetPengirimanTanggal = gql`
     }
 `;
 
-export { GetProductsByName, GetUsersByName };
+export { GetProductsByName, GetUsersByName, GetUsersByLogin };
