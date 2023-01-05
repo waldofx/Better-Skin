@@ -10,6 +10,7 @@ import Home from "./pages/home";
 import Product from "./pages/product";
 import CreateUser from "./pages/createUser";
 import login from "./pages/login";
+import DetailProduct from "./pages/detailproduct";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/product" exact component={Product} />
                         <Route path="/register" exact component={CreateUser} />
                         <Route path="/login" exact component={login} />
+                        <Route path="/DetailProduct" exact component={DetailProduct} />
                     </Switch>
                 </Router>
             </PersistGate>

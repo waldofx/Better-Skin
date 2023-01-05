@@ -9,9 +9,9 @@ function Home() {
             <Header />
             <div class="container-fluid">
                 <section id="section1">
-                    
+
                     <img src="bg1.png" class="rounded img-fluid img-thumbnail mt-5"></img>
-                    
+
                     <h1 class="mt-5">Best Seller</h1>
                     <p>Created for every skin type, need, and concern to get the glowy skin you've been dreaming of.</p>
                     <p>Better skin is a new approach to beauty. It's about fun and freedom and being OK with yourself today.</p>
@@ -23,7 +23,7 @@ function Home() {
 
                         <img src="bg10.png" class="w-5 shadow-1-strong rounded img-fluid img-thumbnail" alt="bg10" />
                     </div>
-                    
+
                 </section>
                 <section id="section2">
 
@@ -33,7 +33,9 @@ function Home() {
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="bg6.png" class="card-img-top" alt="bg6" />
+                                <a href="./detailproduct">
+                                    <img src="bg6.png" class="card-img-top" alt="bg6" />
+                                </a>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
                                         <h5 class="card-title">Face botanical set</h5>
