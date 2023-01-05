@@ -46,8 +46,14 @@ img {
     padding: 20px;
 }
 
+.img-product-left {
+    margin: 100px;
+}
+
 .img-product-left img {
     width: 200px;
+    height: 270px;
+    border: 2px solid #ff9f00;
     margin: 0 auto;
     align-items: center;
 }
@@ -56,8 +62,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    margin-top: 32px;
+    margin-top: 15px;
 }
 
 .img-hover div {
