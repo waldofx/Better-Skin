@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./detailproduct.css";
-import "../hooks/useHoover.js"
+import "../hooks/useHoover.js";
 
 function DetailProduct() {
     return (
@@ -13,20 +13,20 @@ function DetailProduct() {
                     <div className="product-div">
                         <div className="product-left">
                             <div className="img-product-left">
-                                <img src="../public/bg6.png" alt="img-product" />
+                                <img src="bg6.png" alt="img-product" />
                             </div>
                             <div className="img-hover">
                                 <div>
-                                    <img src="../public/bg6.png" alt="img1" />
+                                    <img src="bg6.png" alt="img1" />
                                 </div>
                                 <div>
-                                    <img src="../public/bg7.png" alt="img2" />
+                                    <img src="bg7.png" alt="img2" />
                                 </div>
                                 <div>
-                                    <img src="../public/bg8.png" alt="img3" />
+                                    <img src="bg8.png" alt="img3" />
                                 </div>
                                 <div>
-                                    <img src="../public/bg9.png" alt="img4" />
+                                    <img src="bg9.png" alt="img4" />
                                 </div>
                             </div>
                         </div>
