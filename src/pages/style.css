@@ -44,7 +44,7 @@
 
 
 #section2 {
-  background-image: url(/public/bg5.png);
+  background-image: url(https://i.ibb.co/F6Mmsh7/bg5.png);
   background-size: cover;
   height: 91.2vh;
   margin-top: 40px;
@@ -55,6 +55,50 @@
 p {
   width: auto;
 }
+
+#card_register {
+  background-color: #F5A847;
+}
+
+#btn_register {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  background-color: white;
+  border-color: black;
+  width: auto;
+}
+
+#btn_login {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  background-color: white;
+  border-color: black;
+  width: auto;
+
+}
+
+#content_login {
+  min-height: 70vh;
+}
+
+@media (max-width: 900px){
+  
+  
+}
+
+@media (min-width: 900px){
+  
+  
+}
+
+.text-center {
+margin-left: auto;
+margin-right: auto;
+}
+
+
 
 
 
