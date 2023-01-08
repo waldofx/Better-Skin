@@ -10,6 +10,7 @@ const GetProductsByName = gql`
             final_stock
             total
             img
+            desc
         }
     }
 `;
