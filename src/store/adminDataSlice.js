@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialValue = {
-    img: "",
-    name: "",
+    username: "",
+    password: "",
+    email: "",
     status: false,
 };
 
