@@ -157,11 +157,13 @@ function Home() {
                       {productdatas.map((productdata) => (
                         <div className="col-md-3 mb-2">
                           <div class="card">
+                          <a href={`/detailproduct/${productdata.id}`}>
                             <img
                               src={productdata.img}
                               class="card-img-top"
                               alt="..."
                             />
+                            </a>
                             <div class="card-body">
                               <div className="row">
                                 <div className="d-flex justify-content-between align-items-center mt-2 mb-2">
@@ -170,7 +172,8 @@ function Home() {
                                   </h5>
                                   <p class="card-text">{productdata.price}</p>
                                 </div>
-                                <a className="btn btn-danger" href="#">
+                                <a className="btn btn-danger"  
+                                href="#">
                                   Add To Cart
                                 </a>
                               </div>

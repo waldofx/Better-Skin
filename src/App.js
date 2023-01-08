@@ -33,6 +33,7 @@ function App() {
                         <Route path="/register" exact component={CreateUser} />
                         <Route path="/login" exact component={login} />
                         <Route path="/DetailProduct" exact component={DetailProduct} />
+                        <Route path="/DetailProduct/:id" exact component={DetailProduct} />
                         <Route path="/userDashboard" exact component={userDashboard} />
                         <Route path="/historyProduct" exact component={historyProduct} />
                         <Route path="/transactionList" exact component={transactionList} />
