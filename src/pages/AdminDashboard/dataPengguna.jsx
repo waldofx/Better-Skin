@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 
-function dataPengguna() {
+import useGetUsersByName from "../../hooks/useGetUsersByName";
+import useDeleteUsers from "../../hooks/useDeleteUsers";
+
+function DataPengguna() {
+  const { dataByName, loadingDataByName, errorDataByName } =
+    useGetUsersByName();
+
+  const [userdatas, setUsers] = useState([]);
+  useEffect(() => {
+    if (dataByName) {
+      setUsers(dataByName.users);
+    }
+  }, [dataByName]);
+
+  //error + loading
+  const isError = errorDataByName;
+  const isLoading = loadingDataByName;
+
+  console.log("User data:", userdatas);
+
+  //handle edit & delete
+  const { deleteUsers } = useDeleteUsers();
+
+  function handleDelete(id) {
+    return function (e) {
+      if (window.confirm("Apa anda yakin ingin menghapus user ini?")) {
+        deleteUsers({
+          variables: {
+            id: id,
+          },
+        });
+        window.alert("User terhapus!");
+        window.location.reload(false);
+      }
+    };
+  }
+
   return (
     <div>
       <div className="header">
@@ -55,8 +91,49 @@ function dataPengguna() {
               </ul>
             </div>
           </div>
-          <div className="col-8 border-right" id="middle_section">
-            <h1 className="">Welcome!!</h1>
+          <div
+            className="col-8 border-right"
+            id="middle_section"
+            style={{ minHeight: "700px" }}
+          >
+            {isError && <p>Something Went Wrong...</p>}
+            {isLoading && <p>Now loading...</p>}
+            {!isError && !isLoading && (
+              <table
+                class="table table-bordered table-bordered table-hover mt-5 mb-5"
+                id="dataTables-example"
+              >
+                <thead>
+                  <tr className="text-center">
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+
+                    <th width="15%">Aksi</th>
+                  </tr>
+                </thead>
+                {userdatas.map((userData) => (
+                  <tbody className="text-center">
+                    <td>{userData.id}</td>
+                    <td>{userData.username}</td>
+                    <td>{userData.password}</td>
+                    <td>{userData.email}</td>
+                    <td>{userData.is_admin}</td>
+                    <td>
+                      <button
+                        className="text-white py-2 px-2 rounded  my-4"
+                        style={{ background: "red", width: "70px" }}
+                        onClick={handleDelete(userData.id)}
+                      >
+                        Hapus
+                      </button>
+                    </td>
+                  </tbody>
+                ))}
+              </table>
+            )}
           </div>
         </div>
       </div>
@@ -65,4 +142,4 @@ function dataPengguna() {
   );
 }
 
-export default dataPengguna;
+export default DataPengguna;

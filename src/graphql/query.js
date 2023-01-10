@@ -64,4 +64,4 @@ const GetPengirimanTanggal = gql`
     }
 `;
 
-export { GetProductsByName, GetUsersByName, GetUsersByLogin };
+export { GetProductsByName, GetUsersByName, GetUsersByLogin, GetPembayaranByTanggal };

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer";
 
-function dataPengiriman() {
+function DataPengiriman() {
   return (
     <div>
       <div className="header">
@@ -65,4 +65,4 @@ function dataPengiriman() {
   );
 }
 
-export default dataPengiriman;
+export default DataPengiriman;

@@ -87,4 +87,19 @@ const UpdateUsers = gql`
     }
 `;
 
-export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers };
+const DeleteOrders = gql`
+    mutation MyMutation($id: Int!) {
+        delete_orders(where: { id: { _eq: $id } }) {
+            affected_rows
+            returning {
+                kode
+                produk
+                harga
+                jenis
+                tanggal
+            }
+        }
+    }
+`;
+
+export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers, DeleteOrders };

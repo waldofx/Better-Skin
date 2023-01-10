@@ -11,16 +11,17 @@ import Product from "./pages/product";
 import CreateUser from "./pages/createUser";
 import login from "./pages/login";
 import DetailProduct from "./pages/DetailProduct/detailproduct";
-import userDashboard from "./pages/userDashboard/userDashboard";
-import historyProduct from "./pages/userDashboard/menuHistoryProduct";
-import transactionList from "./pages/userDashboard/menuTransactionList";
-import settings from "./pages/userDashboard/menuSettings";
-import aboutUs from "./pages/userDashboard/menuAboutUs";
-import adminDashboard from "./pages/AdminDashboard/adminDashboard";
-import dataPembayaran from "./pages/AdminDashboard/dataPembayaran";
-import dataPengiriman from "./pages/AdminDashboard/dataPengiriman";
-import dataPengguna from "./pages/AdminDashboard/dataPengguna";
-import dataProduct from "./pages/AdminDashboard/dataProduct";
+import UserDashboard from "./pages/userDashboard/userDashboard";
+import HistoryProduct from "./pages/userDashboard/menuHistoryProduct";
+import TransactionList from "./pages/userDashboard/menuTransactionList";
+import Settings from "./pages/userDashboard/menuSettings";
+import AboutUs from "./pages/userDashboard/menuAboutUs";
+import AdminDashboard from "./pages/AdminDashboard/adminDashboard";
+import DataPembayaran from "./pages/AdminDashboard/dataPembayaran";
+import DataPengiriman from "./pages/AdminDashboard/dataPengiriman";
+import TambahDataProduct from "./pages/AdminDashboard/tambahDataProduct";
+import DataPengguna from "./pages/AdminDashboard/dataPengguna";
+import DataProduct from "./pages/AdminDashboard/dataProduct";
 
 function App() {
     return (
@@ -34,16 +35,17 @@ function App() {
                         <Route path="/login" exact component={login} />
                         <Route path="/DetailProduct" exact component={DetailProduct} />
                         <Route path="/DetailProduct/:id" exact component={DetailProduct} />
-                        <Route path="/userDashboard" exact component={userDashboard} />
-                        <Route path="/historyProduct" exact component={historyProduct} />
-                        <Route path="/transactionList" exact component={transactionList} />
-                        <Route path="/settings" exact component={settings} />
-                        <Route path="/aboutUs" exact component={aboutUs} />
-                        <Route path="/adminDashboard" exact component={adminDashboard} />
-                        <Route path="/dataPembayaran" exact component={dataPembayaran} />
-                        <Route path="/dataPengguna" exact component={dataPengguna} />
-                        <Route path="/dataPengiriman" exact component={dataPengiriman} />
-                        <Route path="/dataProduct" exact component={dataProduct} />
+                        <Route path="/userDashboard" exact component={UserDashboard} />
+                        <Route path="/historyProduct" exact component={HistoryProduct} />
+                        <Route path="/transactionList" exact component={TransactionList} />
+                        <Route path="/settings" exact component={Settings} />
+                        <Route path="/aboutUs" exact component={AboutUs} />
+                        <Route path="/adminDashboard" exact component={AdminDashboard} />
+                        <Route path="/dataPembayaran" exact component={DataPembayaran} />
+                        <Route path="/dataPengguna" exact component={DataPengguna} />
+                        <Route path="/dataPengiriman" exact component={DataPengiriman} />
+                        <Route path="/dataProduct" exact component={DataProduct} />
+                        <Route path="/tambahDataProduct" exact component={TambahDataProduct} />
                     </Switch>
                 </Router>
             </PersistGate>

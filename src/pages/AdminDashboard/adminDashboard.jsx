@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer";
 
-function adminDashboard() {
+function AdminDashboard() {
   return (
     <div>
       <div className="header">
@@ -55,7 +55,9 @@ function adminDashboard() {
               </ul>
             </div>
           </div>
-          <div className="col-8 border-right" id="middle_section"></div>
+          <div className="col-8 border-right" id="middle_section">
+            <h1 className="">Welcome!!</h1>
+          </div>
         </div>
       </div>
       <Footer />
@@ -63,4 +65,4 @@ function adminDashboard() {
   );
 }
 
-export default adminDashboard;
+export default AdminDashboard;

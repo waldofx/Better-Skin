@@ -1,8 +1,29 @@
-import React, { UseEffect, UseState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 import "./style.css";
 
-function userDashboard() {
+// import hooks
+import useGetProductsByName from "../../hooks/useGetProductsByName";
+
+function UserDashboard() {
+  //get products
+  // ----------------- custom hook graphql -------------------------
+  const { dataByName, loadingDataByName, errorDataByName } =
+    useGetProductsByName();
+
+  //setproducts at the start of render using useeffect
+  const [productdatas, setProducts] = useState([]);
+  useEffect(() => {
+    if (dataByName) {
+      setProducts(dataByName.products);
+    }
+  }, [dataByName]);
+
+  //error + loading
+  const isError = errorDataByName;
+  const isLoading = loadingDataByName;
+
+  console.log("Product data:", productdatas);
   return (
     <div>
       <div className="header">
@@ -80,9 +101,66 @@ function userDashboard() {
                 </div>
               </div>
             </div>
-            <h1 className="mt-5" style={{ marginLeft: "40px" }}>
+            <h1 className="mt-5 mb-5" style={{ marginLeft: "40px" }}>
               Product
             </h1>
+            {isError && <p>Something Went Wrong...</p>}
+            {isLoading && <p>Now loading...</p>}
+            {!isError && !isLoading && (
+              <div>
+                <div className="container mb-5">
+                  <div className="row">
+                    {productdatas.map((productdata) => (
+                      <div className="col-md-3 mb-2">
+                        <div class="card" style={{ backgroundColor: "black" }}>
+                          <a href={`/detailproduct/${productdata.id}`}>
+                            <img
+                              src={productdata.img}
+                              class="card-img-top"
+                              alt="..."
+                            />
+                          </a>
+                          <div class="card-body">
+                            <div className="col">
+                              <div className="d-flex justify-content-between align-items-center mt-2 mb-2">
+                                <h5 class="card-title text-white text-center">
+                                  {productdata.name}
+                                </h5>
+                              </div>
+                              <div
+                                style={{
+                                  width: "200px",
+                                  height: "40px",
+                                  border: "1px solid",
+                                  backgroundColor: "#F5A847",
+                                }}
+                                className="text-center mb-3 mt-3"
+                              >
+                                <p className="fw-bold text-white mt-1">
+                                  Rp. {productdata.price}
+                                </p>
+                              </div>
+                              <div className="text-center">
+                                <a
+                                  className="btn text-black"
+                                  style={{
+                                    backgroundColor: "white",
+                                    width: "100px",
+                                  }}
+                                  href="#"
+                                >
+                                  Buy
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div className="col-2" id="last_section">
             <div className="py-5">
@@ -145,4 +223,4 @@ function userDashboard() {
   );
 }
 
-export default userDashboard;
+export default UserDashboard;
