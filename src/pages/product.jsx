@@ -28,48 +28,6 @@ function Product() {
 
   console.log("Product data:", productdatas);
 
-  //insert products
-  const [formData, setFormData] = useState({
-    name: "",
-    price: 0,
-    initial_stock: 0,
-    final_stock: 0,
-    total: 0,
-  });
-
-  const { insertProducts } = useInsertProducts();
-
-  function handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    setFormData((prev) => {
-      return { ...prev, [name]: value };
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("Data submitted: ", formData);
-
-    if (formData.name === "" || formData.price === 0) {
-      alert("Data belum lengkap!");
-    } else {
-      insertProducts({
-        variables: {
-          object: {
-            name: formData.name,
-            price: formData.price,
-            initial_stock: formData.initial_stock,
-            final_stock: formData.final_stock,
-            total: formData.total,
-          },
-        },
-      });
-      alert("Data berhasil dikirim ke database!");
-    }
-  }
-
   return (
     <div>
       <Header />
@@ -86,12 +44,12 @@ function Product() {
                   {productdatas.map((productdata) => (
                     <div className="col-md-3 mb-2">
                       <div className="card">
-                      <a href={`/detailproduct/${productdata.id}`}>
-                        <img
-                          src={productdata.img}
-                          className="card-img-top"
-                          alt="..."
-                        />
+                        <a href={`/detailproduct/${productdata.id}`}>
+                          <img
+                            src={productdata.img}
+                            className="card-img-top"
+                            alt="..."
+                          />
                         </a>
                         <div className="card-body">
                           <div className="row">
@@ -127,7 +85,6 @@ function Product() {
             </div>
           )}
         </div>
-        {/* INI ADALAH AKHIR LIST PRODUK */}
       </div>
       <Footer />
     </div>

@@ -3,8 +3,6 @@ import Footer from "../../components/footer";
 
 import useGetProductsByName from "../../hooks/useGetProductsByName";
 import useDeleteProducts from "../../hooks/useDeleteProducts";
-import useInsertProducts from "../../hooks/useInsertProducts";
-import { from } from "@apollo/client";
 
 function DataProduct() {
   //get products
@@ -25,6 +23,8 @@ function DataProduct() {
   const isLoading = loadingDataByName;
 
   console.log("Product data:", productdatas);
+
+  var no = 1;
 
   //handle edit & delete
   const { deleteProducts } = useDeleteProducts();
@@ -120,30 +120,28 @@ function DataProduct() {
                       <th>No</th>
                       <th>Name</th>
                       <th>Price</th>
-                      <th>Initial Stock</th>
-                      <th>Final Stock</th>
-                      <th>Total</th>
+                      <th width="15%">Description</th>
+                      <th width="15%">Manfaat</th>
+                      <th width="15%">Cara pakai</th>
                       <th>Image</th>
-                      <th>Description</th>
                       <th width="15%">Aksi</th>
                     </tr>
                   </thead>
                   {productdatas.map((productdata) => (
                     <tbody className="text-center">
-                      <td>{productdata.id}</td>
+                      <td>{no++}</td>
                       <td>{productdata.name}</td>
                       <td>{productdata.price}</td>
-                      <td>{productdata.initial_stock}</td>
-                      <td>{productdata.final_stock}</td>
-                      <td>{productdata.total}</td>
-
+                      <td>{productdata.desc}</td>
+                      <td>{productdata.desc2}</td>
+                      <td>{productdata.desc3}</td>
                       <td>
                         <img
                           src={productdata.img}
                           style={{ width: "100px", height: "100px" }}
                         />
                       </td>
-                      <td>{productdata.desc}</td>
+
                       <td>
                         <button
                           className="text-white py-2 px-2 rounded  my-4"

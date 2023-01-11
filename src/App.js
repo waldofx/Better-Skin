@@ -20,6 +20,7 @@ import AdminDashboard from "./pages/AdminDashboard/adminDashboard";
 import DataPembayaran from "./pages/AdminDashboard/dataPembayaran";
 import DataPengiriman from "./pages/AdminDashboard/dataPengiriman";
 import TambahDataProduct from "./pages/AdminDashboard/tambahDataProduct";
+import TambahDataPengguna from "./pages/AdminDashboard/tambahDataPengguna";
 import DataPengguna from "./pages/AdminDashboard/dataPengguna";
 import DataProduct from "./pages/AdminDashboard/dataProduct";
 
@@ -46,6 +47,7 @@ function App() {
                         <Route path="/dataPengiriman" exact component={DataPengiriman} />
                         <Route path="/dataProduct" exact component={DataProduct} />
                         <Route path="/tambahDataProduct" exact component={TambahDataProduct} />
+                        <Route path="/tambahDataPengguna" exact component={TambahDataPengguna} />
                     </Switch>
                 </Router>
             </PersistGate>

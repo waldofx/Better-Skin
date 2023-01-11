@@ -9,6 +9,10 @@ const InsertProducts = gql`
             initial_stock
             final_stock
             total
+            img
+            desc
+            desc2
+            desc3
         }
     }
 `;
@@ -24,6 +28,8 @@ const DeleteProducts = gql`
                 initial_stock
                 final_stock
                 total
+                desc2
+                desc3
             }
         }
     }
@@ -88,8 +94,8 @@ const UpdateUsers = gql`
 `;
 
 const DeleteOrders = gql`
-    mutation MyMutation($id: Int!) {
-        delete_orders(where: { id: { _eq: $id } }) {
+    mutation MyMutation($kode: Int!) {
+        delete_orders(where: { kode: { _eq: $kode } }) {
             affected_rows
             returning {
                 kode
@@ -102,4 +108,20 @@ const DeleteOrders = gql`
     }
 `;
 
-export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers, DeleteOrders };
+const DeleteShipments = gql`
+    mutation MyMutation($id: Int!) {
+        delete_pengiriman(where: { id: { _eq: $id } }) {
+            affected_rows
+            returning {
+                id
+                username
+                alamat
+                produk
+                jumlah
+                tanggal
+            }
+        }
+    }
+`;
+
+export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers, DeleteOrders, DeleteShipments };

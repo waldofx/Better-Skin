@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 
-import useGetPembayaranBytanggal from "../../hooks/useGetPembayaranByTanggal";
-import useDeleteOrder from "../../hooks/useDeleteOrder";
+import useGetPembayaranByTanggal from "../../hooks/useGetPembayaranByTanggal";
+import useDeleteOrders from "../../hooks/useDeleteOrders";
 
 function DataPembayaran() {
   const { dataByTanggal, loadingDataByTanggal, errorDataByTanggal } =
-    useGetPembayaranBytanggal();
+    useGetPembayaranByTanggal();
 
-  const [orderdatas, setOrders] = useState([]);
+  const [orderdatas, setPembayaran] = useState([]);
   useEffect(() => {
     if (dataByTanggal) {
-      setOrders(dataByTanggal.orders);
+      setPembayaran(dataByTanggal.pembayaran);
     }
   }, [dataByTanggal]);
 
@@ -19,22 +19,26 @@ function DataPembayaran() {
   const isError = errorDataByTanggal;
   const isLoading = loadingDataByTanggal;
 
-  const { deleteOrders } = useDeleteOrder();
-  function handleDelete(id) {
+  console.log("Order data:", orderdatas);
+
+  var no = 1;
+
+  //handle edit & delete
+  const { deleteOrders } = useDeleteOrders();
+
+  function handleDelete(kode) {
     return function (e) {
-      if (window.confirm("Apa anda yakin ingin menghapus pesanan ini?")) {
+      if (window.confirm("Apa anda yakin ingin menghapus order ini?")) {
         deleteOrders({
           variables: {
-            id: id,
+            kode: kode,
           },
         });
-        window.alert("Pesanan terhapus!");
+        window.alert("Order terhapus!");
         window.location.reload(false);
       }
     };
   }
-
-  console.log("Order data:", orderdatas);
 
   return (
     <div>
@@ -94,57 +98,51 @@ function DataPembayaran() {
             </div>
           </div>
           <div
-            className="col-8 border-right"
+            className="col-8 border-right mx-5"
             id="middle_section"
             style={{ minHeight: "700px" }}
           >
             {isError && <p>Something Went Wrong...</p>}
             {isLoading && <p>Now loading...</p>}
             {!isError && !isLoading && (
-              <table
-                class="table table-striped table-bordered table-hover mt-5 mb-5"
-                id="dataTables-example"
-              >
-                <thead>
-                  <tr className="text-center">
-                    <th>No</th>
-                    <th>Product</th>
-                    <th>Harga</th>
-                    <th>Jenis</th>
-                    <th>Tanggal</th>
-                    <th width="10%">Aksi</th>
-                  </tr>
-                </thead>
-                {orderdatas.map((orderData) => (
-                  <tbody className="text-center">
-                    <td>{orderData.kode}</td>
-                    <td>{orderData.produk}</td>
-                    <td>{orderData.harga}</td>
-                    <td>{orderData.jenis}</td>
-                    <td>{new Date(orderData.tangal).toLocaleString()}</td>
-                    <td>
-                      <button
-                        className="text-white py-2 px-2 rounded mx-2  my-4"
-                        style={{
-                          background: "green",
-                          width: "70px",
-                          fontStyle: "bold",
-                        }}
-                        onClick={handleDelete(orderData.id)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="text-white font-bold bg-red-600 hover:bg-red-800 py-1 px-1 rounded my-4"
-                        style={{ background: "red" }}
-                        onClick={handleDelete(orderData.kode)}
-                      >
-                        Hapus
-                      </button>
-                    </td>
-                  </tbody>
-                ))}
-              </table>
+              <div className="table-responsive">
+                <table
+                  class="table table-striped table-bordered table-hover mt-5 mb-5"
+                  id="dataTables-example"
+                >
+                  <thead>
+                    <tr className="text-center">
+                      <th>No</th>
+                      <th>Kode</th>
+                      <th>Produk</th>
+                      <th>Harga</th>
+                      <th>Jenis</th>
+                      <th>Tanggal</th>
+                      <th width="15%">Aksi</th>
+                    </tr>
+                  </thead>
+                  {orderdatas.map((orderdata) => (
+                    <tbody className="text-center">
+                      <td>{no++}</td>
+                      <td>{orderdata.kode}</td>
+                      <td>{orderdata.produk}</td>
+                      <td>{orderdata.harga}</td>
+                      <td>{orderdata.jenis}</td>
+                      <td>{orderdata.tanggal}</td>
+
+                      <td>
+                        <button
+                          className="text-white py-2 px-2 rounded  my-4"
+                          style={{ background: "red", width: "70px" }}
+                          onClick={handleDelete(orderdata.tanggal)}
+                        >
+                          Hapus
+                        </button>
+                      </td>
+                    </tbody>
+                  ))}
+                </table>
+              </div>
             )}
           </div>
         </div>

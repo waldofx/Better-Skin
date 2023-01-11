@@ -11,6 +11,8 @@ const GetProductsByName = gql`
             total
             img
             desc
+            desc2
+            desc3
         }
     }
 `;
@@ -51,9 +53,9 @@ const GetPembayaranByTanggal = gql`
     }
 `;
 
-const GetPengirimanTanggal = gql`
+const GetPengirimanByTanggal = gql`
     query MyQuery {
-        pembayaran(order_by: { tanggal: asc }) {
+        pengiriman(order_by: { tanggal: asc }) {
             id
             username
             alamat
@@ -64,4 +66,4 @@ const GetPengirimanTanggal = gql`
     }
 `;
 
-export { GetProductsByName, GetUsersByName, GetUsersByLogin, GetPembayaranByTanggal };
+export { GetProductsByName, GetUsersByName, GetUsersByLogin, GetPembayaranByTanggal, GetPengirimanByTanggal };

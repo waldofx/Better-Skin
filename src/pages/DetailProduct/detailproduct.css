@@ -30,7 +30,7 @@ img {
 
 .product-div {
     max-width: 1rem 0;
-    padding: 2rem 0;
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: #fff;
@@ -39,15 +39,15 @@ img {
 }
 
 .product-left {
-    padding: 20px;
+    padding: 10px;
 }
 
 .product-right {
-    padding: 20px;
+    padding: 10px;
 }
 
 .img-product-left {
-    margin: 100px;
+    margin: 0px;
 }
 
 .img-product-left img {

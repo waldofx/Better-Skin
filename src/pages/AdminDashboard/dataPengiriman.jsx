@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 
+import useGetPengirimanByTanggal from "../../hooks/useGetPengirimanByTanggal";
+import useDeleteShipments from "../../hooks/useDeleteShipments";
+
 function DataPengiriman() {
+  const { dataByTanggal, loadingDataByTanggal, errorDataByTanggal } =
+    useGetPengirimanByTanggal();
+
+  const [shipmentDatas, setPengiriman] = useState([]);
+  useEffect(() => {
+    if (dataByTanggal) {
+      setPengiriman(dataByTanggal.pengiriman);
+    }
+  }, [dataByTanggal]);
+
+  //error + loading
+  const isError = errorDataByTanggal;
+  const isLoading = loadingDataByTanggal;
+
+  var no = 1;
+
+  console.log("Shipment data:", shipmentDatas);
+
+  const { deleteShipments } = useDeleteShipments();
+
+  function handleDelete(id) {
+    return function (e) {
+      if (window.confirm("Apa anda yakin ingin menghapus order ini?")) {
+        deleteShipments({
+          variables: {
+            id: id,
+          },
+        });
+        window.alert("Order terhapus!");
+        window.location.reload(false);
+      }
+    };
+  }
+
   return (
     <div>
       <div className="header">
@@ -55,8 +92,53 @@ function DataPengiriman() {
               </ul>
             </div>
           </div>
-          <div className="col-8 border-right" id="middle_section">
-            <h1 className="">Welcome!!</h1>
+          <div
+            className="col-8 border-right mx-5"
+            id="middle_section"
+            style={{ minHeight: "700px" }}
+          >
+            {isError && <p>Something Went Wrong...</p>}
+            {isLoading && <p>Now loading...</p>}
+            {!isError && !isLoading && (
+              <div className="table-responsive">
+                <table
+                  class="table table-striped table-bordered table-hover mt-5 mb-5"
+                  id="dataTables-example"
+                >
+                  <thead>
+                    <tr className="text-center">
+                      <th>No</th>
+                      <th>Username</th>
+                      <th>Alamat</th>
+                      <th>produk</th>
+                      <th>Jumlah</th>
+                      <th>Tanggal</th>
+                      <th width="15%">Aksi</th>
+                    </tr>
+                  </thead>
+                  {shipmentDatas.map((shipmentdata) => (
+                    <tbody className="text-center">
+                      <td>{no++}</td>
+                      <td>{shipmentdata.username}</td>
+                      <td>{shipmentdata.alamat}</td>
+                      <td>{shipmentdata.produk}</td>
+                      <td>{shipmentdata.jumlah}</td>
+                      <td>{shipmentdata.tanggal}</td>
+
+                      <td>
+                        <button
+                          className="text-white py-2 px-2 rounded  my-4"
+                          style={{ background: "red", width: "70px" }}
+                          onClick={handleDelete(shipmentdata.tanggal)}
+                        >
+                          Hapus
+                        </button>
+                      </td>
+                    </tbody>
+                  ))}
+                </table>
+              </div>
+            )}
           </div>
         </div>
       </div>

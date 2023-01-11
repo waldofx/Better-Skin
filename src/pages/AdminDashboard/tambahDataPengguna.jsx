@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 
-import useGetProductsByName from "../../hooks/useGetProductsByName";
-import useInsertProducts from "../../hooks/useInsertProducts";
+import useGetUsersByName from "../../hooks/useGetUsersByName";
+import useInsertUsers from "../../hooks/useInsertUsers";
 
-function TambahDataProduct() {
+function TambahDataPengguna() {
   const { dataByName, loadingDataByName, errorDataByName } =
-    useGetProductsByName();
+    useGetUsersByName();
 
-  //setproducts at the start of render using useeffect
-  const [productdatas, setProducts] = useState([]);
+  const [userdatas, setUsers] = useState([]);
   useEffect(() => {
     if (dataByName) {
-      setProducts(dataByName.products);
+      setUsers(dataByName.users);
     }
   }, [dataByName]);
 
@@ -20,20 +19,16 @@ function TambahDataProduct() {
   const isError = errorDataByName;
   const isLoading = loadingDataByName;
 
-  console.log("Product data:", productdatas);
+  console.log("User data:", userdatas);
 
-  //insert products
+  //insert users
   const [formData, setFormData] = useState({
-    name: "",
-    price: 0,
-    initial_stock: 0,
-    final_stock: 0,
-    total: 0,
-    img: "",
-    desc: "",
+    username: "",
+    password: "",
+    email: "",
   });
 
-  const { insertProducts } = useInsertProducts();
+  const { insertUsers } = useInsertUsers();
 
   function handleChange(e) {
     const name = e.target.name;
@@ -48,19 +43,19 @@ function TambahDataProduct() {
     e.preventDefault();
     console.log("Data submitted: ", formData);
 
-    if (formData.name === "" || formData.price === 0) {
+    if (formData.username === "") {
       alert("Data belum lengkap!");
+    } else if (formData.confirmPassword != formData.password) {
+      alert(
+        "Password anda tidak sama, Mohon konfirmasi password dengan benar!"
+      );
     } else {
-      insertProducts({
+      insertUsers({
         variables: {
           object: {
-            name: formData.name,
-            price: formData.price,
-            initial_stock: formData.initial_stock,
-            final_stock: formData.final_stock,
-            total: formData.total,
-            img: formData.img,
-            desc: formData.desc,
+            username: formData.username,
+            password: formData.password,
+            email: formData.email,
           },
         },
       });
@@ -137,61 +132,41 @@ function TambahDataProduct() {
                   <div className="card p-2" id="card_register">
                     <div className="card-body ">
                       <div className="form-group p-2">
-                        <label>Name</label>
+                        <label>Username</label>
                         <input
-                          name="name"
+                          name="username"
                           type="text"
-                          placeholder="Nama product"
+                          placeholder="Username"
                           className="form-control"
                           onChange={handleChange}
                         />
                       </div>
                       <div className="form-group p-2">
-                        <label>Price</label>
+                        <label>Email</label>
                         <input
-                          name="price"
-                          type="text"
-                          placeholder="Rp. 10000"
+                          name="email"
+                          type="Email"
+                          placeholder="@gmail.com"
                           className="form-control"
                           onChange={handleChange}
                         />
                       </div>
                       <div className="form-group p-2">
-                        <label>Description</label>
-                        <textarea
-                          name="desc"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                      <div className="form-group p-2">
-                        <label>Manfaat</label>
-                        <textarea
-                          name="desc2"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                      <div className="form-group p-2">
-                        <label>Cara Pakai</label>
-                        <textarea
-                          name="desc3"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-
-                      <div className="form-group p-2">
-                        <label>Image</label>
+                        <label>Password</label>
                         <input
-                          name="img"
-                          type="text"
+                          name="confirmPassword"
+                          type="Password"
+                          placeholder="Password"
+                          className="form-control"
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <div className="form-group p-2">
+                        <label>Confirm password</label>
+                        <input
+                          name="password"
+                          type="password"
+                          placeholder="Confirm your password"
                           className="form-control"
                           onChange={handleChange}
                         />
@@ -203,7 +178,7 @@ function TambahDataProduct() {
                       id="btn_register"
                       style={{ color: "black" }}
                     >
-                      Submit
+                      Create Account
                     </button>
                   </div>
                 </div>
@@ -217,4 +192,4 @@ function TambahDataProduct() {
   );
 }
 
-export default TambahDataProduct;
+export default TambahDataPengguna;

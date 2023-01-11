@@ -55,8 +55,12 @@ function AdminDashboard() {
               </ul>
             </div>
           </div>
-          <div className="col-8 border-right" id="middle_section">
-            <h1 className="">Welcome!!</h1>
+          <div
+            className="col-8 border-right"
+            id="middle_section"
+            style={{ minHeight: "700px" }}
+          >
+            <h1 className="mx-5 text-center mt-5">Welcome!!</h1>
           </div>
         </div>
       </div>

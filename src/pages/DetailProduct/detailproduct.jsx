@@ -20,6 +20,8 @@ const GetProductByID = gql`
       total
       img
       desc
+      desc2
+      desc3
     }
   }
 `;
@@ -50,21 +52,11 @@ function DetailProduct() {
           <div className="product-div">
             <div className="product-left">
               <div className="img-product-left">
-                <img src={productdata.img} alt="img-product" />
-              </div>
-              <div className="img-hover">
-                <div>
-                  <img src="bg6.png" alt="img1" />
-                </div>
-                <div>
-                  <img src="bg7.png" alt="img2" />
-                </div>
-                <div>
-                  <img src="bg8.png" alt="img3" />
-                </div>
-                <div>
-                  <img src="bg9.png" alt="img4" />
-                </div>
+                <img
+                  src={productdata.img}
+                  alt="img-product"
+                  style={{ width: "300px", height: "500px" }}
+                />
               </div>
             </div>
 
@@ -74,10 +66,7 @@ function DetailProduct() {
               <p className="product-description">{productdata.desc}</p>
               <div className="btn-groups">
                 <button type="button" className="fas add-cart-btn">
-                  <i className="txt-btn"></i> Add To Cart
-                </button>
-                <button type="button" className="fas buy-cart-btn">
-                  <i className="txt-btn"></i> Buy Now
+                  <i className="txt-btn"></i> Buy now
                 </button>
               </div>
             </div>
