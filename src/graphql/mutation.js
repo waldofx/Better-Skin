@@ -93,6 +93,18 @@ const UpdateUsers = gql`
     }
 `;
 
+const InsertOrders = gql`
+    mutation MyMutation($object: pembayaran_insert_input = {}) {
+        insert_pembayaran_one(object: $object) {
+            kode
+            produk
+            harga
+            jenis
+            tanggal
+        }
+    }
+`;
+
 const DeleteOrders = gql`
     mutation MyMutation($kode: Int!) {
         delete_orders(where: { kode: { _eq: $kode } }) {
@@ -124,4 +136,14 @@ const DeleteShipments = gql`
     }
 `;
 
-export { InsertProducts, DeleteProducts, UpdateProducts, InsertUsers, DeleteUsers, UpdateUsers, DeleteOrders, DeleteShipments };
+export {
+    InsertProducts,
+    DeleteProducts,
+    UpdateProducts,
+    InsertUsers,
+    DeleteUsers,
+    UpdateUsers,
+    InsertOrders,
+    DeleteOrders,
+    DeleteShipments,
+};
