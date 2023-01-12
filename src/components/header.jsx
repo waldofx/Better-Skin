@@ -57,6 +57,15 @@ function Header() {
                   </a>
                 </li>
               ) : (
+                <ul class="navbar-nav ms-auto ">
+                <li class="nav-item active">
+                  <a
+                    class="nav-link"
+                    href="/adminDashboard"
+                  >
+                    Dashboard
+                  </a>
+              </li>
                 <li class="nav-item active">
                   <a
                     class="nav-link"
@@ -66,6 +75,7 @@ function Header() {
                     Logout
                   </a>
                 </li>
+                </ul>
               )}
               <li class="nav-item">
                 <a class="nav-link" href="/userDashboard">
