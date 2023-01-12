@@ -93,9 +93,9 @@ function DetailProduct() {
         e.preventDefault();
 
         let message = `Salam, Saya ingin pesan ${produk} yang bertotal harga Rp. ${harga}. Apakah tersedia?`;
-        let url = `https://web.whatsapp.com/send?phone=6282260679579`;
+        let url = `https://web.whatsapp.com/send?phone=insertnumberhere`;
         url += `&text=${encodeURI(message)}&app_absent=0`;
-        window.open(url);
+        // window.open(url);
         insertOrders({
             variables: {
                 object: {
