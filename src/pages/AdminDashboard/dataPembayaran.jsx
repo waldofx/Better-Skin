@@ -113,7 +113,7 @@ function DataPembayaran() {
                   <thead>
                     <tr className="text-center">
                       <th>No</th>
-                      <th>Kode</th>
+                      {/* <th>Kode</th> */}
                       <th>Produk</th>
                       <th>Harga</th>
                       <th>Jenis</th>
@@ -124,7 +124,7 @@ function DataPembayaran() {
                   {orderdatas.map((orderdata) => (
                     <tbody className="text-center">
                       <td>{no++}</td>
-                      <td>{orderdata.id}</td>
+                      {/* <td>{orderdata.id}</td> */}
                       <td>{orderdata.produk}</td>
                       <td>{orderdata.harga}</td>
                       <td>{orderdata.jenis}</td>
