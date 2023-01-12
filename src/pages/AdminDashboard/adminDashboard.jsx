@@ -1,27 +1,13 @@
 import React from "react";
+
+//import components and styles
+import Header from "../../components/header";
 import Footer from "../../components/footer";
 
 function AdminDashboard() {
   return (
     <div>
-      <div className="header">
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              Better Skin
-            </a>
-            <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="navbar-nav ms-auto d-none d-lg-inline-flex">
-                <li className="nav-item active">
-                  <a className="nav-link" href="/login">
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
+      <Header />
       <div id="wrapper">
         <div className="row">
           <div
