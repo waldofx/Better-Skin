@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from "react";
 
-import useGetProductsByName from "../../hooks/useGetProductsByName";
-import useInsertProducts from "../../hooks/useInsertProducts";
+import useInsertShipments from "../../hooks/useInsertShipments";
+import useGetPengirimanByTanggal from "../../hooks/useGetPengirimanByTanggal";
 
 //import components and styles
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 
-function TambahDataProduct() {
-  const { dataByName, loadingDataByName, errorDataByName } =
-    useGetProductsByName();
-
+function TambahDataPengiriman() {
+  const { dataByTanggal, loadingDataByTanggal, errorDataByTanggal } =
+    useGetPengirimanByTanggal();
   //setproducts at the start of render using useeffect
-  const [productdatas, setProducts] = useState([]);
+  const [shipmentDatas, setPengiriman] = useState([]);
   useEffect(() => {
-    if (dataByName) {
-      setProducts(dataByName.products);
+    if (dataByTanggal) {
+      setPengiriman(dataByTanggal.pengiriman);
     }
-  }, [dataByName]);
+  }, [dataByTanggal]);
 
   //error + loading
-  const isError = errorDataByName;
-  const isLoading = loadingDataByName;
+  const isError = errorDataByTanggal;
+  const isLoading = loadingDataByTanggal;
 
-  console.log("Product data:", productdatas);
+  console.log("Data pengiriman:", shipmentDatas);
 
   //insert products
   const [formData, setFormData] = useState({
@@ -36,14 +35,14 @@ function TambahDataProduct() {
     desc: "",
   });
 
-  const { insertProducts } = useInsertProducts();
+  const { insertShipments } = useInsertShipments();
 
   function handleChange(e) {
-    const name = e.target.name;
+    const username = e.target.username;
     const value = e.target.value;
 
     setFormData((prev) => {
-      return { ...prev, [name]: value };
+      return { ...prev, [username]: value };
     });
   }
 
@@ -51,21 +50,17 @@ function TambahDataProduct() {
     e.preventDefault();
     console.log("Data submitted: ", formData);
 
-    if (formData.name === "" || formData.price === 0) {
+    if (formData.username === "" || formData.alamat === "") {
       alert("Data belum lengkap!");
     } else {
-      insertProducts({
+      insertShipments({
         variables: {
           object: {
-            name: formData.name,
-            price: formData.price,
-            initial_stock: formData.initial_stock,
-            final_stock: formData.final_stock,
-            total: formData.total,
-            img: formData.img,
-            desc: formData.desc,
-            desc2: formData.desc2,
-            desc3: formData.desc3,
+            username: formData.username,
+            alamat: formData.alamat,
+            produk: formData.produk,
+            jumlah: formData.jumlah,
+            tanggal: formData.tanggal,
           },
         },
       });
@@ -125,9 +120,9 @@ function TambahDataProduct() {
                   <div className="card p-2" id="card_register">
                     <div className="card-body ">
                       <div className="form-group p-2">
-                        <label>Name</label>
+                        <label>Username</label>
                         <input
-                          name="name"
+                          name="username"
                           type="text"
                           placeholder="Nama product"
                           className="form-control"
@@ -135,56 +130,48 @@ function TambahDataProduct() {
                         />
                       </div>
                       <div className="form-group p-2">
-                        <label>Price</label>
+                        <label>Alamat</label>
                         <input
-                          name="price"
+                          name="alamat"
                           type="text"
-                          placeholder="Rp. 10000"
+                          placeholder="Jalan mayor oking"
                           className="form-control"
                           onChange={handleChange}
                         />
                       </div>
                       <div className="form-group p-2">
-                        <label>Description</label>
-                        <textarea
-                          name="desc"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                      <div className="form-group p-2">
-                        <label>Manfaat</label>
-                        <textarea
-                          name="desc2"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                      <div className="form-group p-2">
-                        <label>Cara Pakai</label>
-                        <textarea
-                          name="desc3"
-                          type="test"
-                          placeholder="Deskripsi"
-                          className="form-control"
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-
-                      <div className="form-group p-2">
-                        <label>Image</label>
+                        <label>Produk</label>
                         <input
-                          name="img"
+                          name="produk"
                           type="text"
+                          placeholder="nama produk"
+                          className="form-control"
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <div className="form-group p-2">
+                        <label>jumlah</label>
+                        <input
+                          name="alamat"
+                          type="number"
+                          placeholder=""
+                          className="form-control"
+                          onChange={handleChange}
+                        />
+                      </div>
+                      \
+                      <div className="form-group p-2">
+                        <label>tanggal</label>
+                        <input
+                          name="tanggal"
+                          type="date"
+                          placeholder="Jalan mayor oking"
                           className="form-control"
                           onChange={handleChange}
                         />
                       </div>
                     </div>
+
                     <button
                       class="btn btn-danger mt-2 mb-3"
                       type="submit"
@@ -205,4 +192,4 @@ function TambahDataProduct() {
   );
 }
 
-export default TambahDataProduct;
+export default TambahDataPengiriman;

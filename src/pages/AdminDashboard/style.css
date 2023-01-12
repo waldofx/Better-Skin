@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f5f9;
+  }
+  .card {
+    position: relative;
+    margin: 110px auto;
+    width: 450px;
+    padding: 20px;
+    box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    border: 0;
+    
+  }
+    .circle {
+      border-radius: 3px;
+      width: 150px;
+      height: 150px;
+      background: black;
+      position: absolute;
+      right: 0px;
+      top: 0;
+      background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+      border-bottom-left-radius: 170px;
+    }
+    .content {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      font-weight: 300;
+    }
+    .social {
+      margin-bottom: 5px;
+    }
+        a {
+     text-decoration: none !important;
+     color: black;
+      margin-left: 8px;
+      font-weight: 300;
+        }
+      i {
+        font-weight: 400;
+      }
+    
+    
+    .location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+      i {
+        color: red;
+      }
+      p {
+        font-weight: 300;
+      }
+    
+      .welcome-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-color);
+      }
+      
+      .welcome-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-image: linear-gradient(
+          140deg,
+          var(--primairy-gradient-color),
+          var(--secondary-gradient-color)
+        );
+        width: 60%;
+        height: 60%;
+        border: 0.2em solid var(--secondary-color);
+        border-radius: 5px;
+      }
+      
+      .welcome-section h1 {
+        justify-content: flex-start;
+        margin-top: 1em;
+        
+      }
+
+      .title {
+        margin-left: 90px;
+        margin-right: auto;
+      }
+  

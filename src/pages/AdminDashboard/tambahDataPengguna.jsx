@@ -97,7 +97,7 @@ function TambahDataPengguna() {
                   <a href="/dataPembayaran">Data pembayaran</a>
                 </li>
                 <li>
-                  <a href="/dataPengriman">Data pengiriman</a>
+                  <a href="/dataPengiriman">Data pengiriman</a>
                 </li>
               </ul>
             </div>

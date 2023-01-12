@@ -88,7 +88,7 @@ function DataPengiriman() {
             {!isError && !isLoading && (
               <div className="table-responsive">
                 <div className="mt-5">
-                  <a href="/tambahDataProduct" class="btn btn-success">
+                  <a href="/tambahDataPengiriman" class="btn btn-success">
                     <i class="fa fa-plus"></i> Tambah Data Pengiriman
                   </a>
                 </div>

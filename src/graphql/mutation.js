@@ -135,6 +135,19 @@ const DeleteShipments = gql`
     }
 `;
 
+const InsertShipments = gql`
+    mutation MyMutation($object: pengiriman_insert_input = {}) {
+        insert_pengiriman_one(object: $object) {
+            id
+            username
+            alamat
+            produk
+            jumlah
+            tanggal
+        }
+    }
+`;
+
 export {
     InsertProducts,
     DeleteProducts,
@@ -145,4 +158,5 @@ export {
     InsertOrders,
     DeleteOrders,
     DeleteShipments,
+    InsertShipments,
 };

@@ -3,6 +3,7 @@ import React from "react";
 //import components and styles
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import "./style.css";
 
 function AdminDashboard() {
   return (
@@ -36,7 +37,7 @@ function AdminDashboard() {
                   <a href="/dataPembayaran">Data pembayaran</a>
                 </li>
                 <li>
-                  <a href="/dataPengriman">Data pengiriman</a>
+                  <a href="/dataPengiriman">Data pengiriman</a>
                 </li>
               </ul>
             </div>
@@ -46,7 +47,18 @@ function AdminDashboard() {
             id="middle_section"
             style={{ minHeight: "700px" }}
           >
-            <h1 className="mx-5 text-center mt-5">Welcome!!</h1>
+            <section id="welcome-section" class="welcome-section">
+              <div class="welcome-card">
+                <div class="container">
+                  <div class="card" style={{ marginLeft: "17em" }}>
+                    <div class="title">
+                      <h1>Welcome</h1>
+                    </div>
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
