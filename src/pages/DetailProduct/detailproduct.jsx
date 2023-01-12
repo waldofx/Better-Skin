@@ -51,9 +51,9 @@ function DetailProduct() {
   // const date = `${currentdate.getDate()}/${currentdate.getMonth()+1}/${currentdate.getFullYear()}`;
 
   const [Order, setOrder] = useState({
-    produk: "",
-    harga: 0,
-    jenis: "",
+    produk: productdata.name,
+    harga: productdata.price,
+    jenis: "Skincare",
     tanggal: currentdate,
   });
 
@@ -89,7 +89,7 @@ function DetailProduct() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    let message = `Salam, Saya ingin pesan ${produk} yang bertotal harga Rp. ${harga}. Apakah tersedia?`;
+    let message = `Salam, Saya ingin pesan ${productdata.name} yang bertotal harga Rp. ${productdata.price}. Apakah tersedia?`;
     let url = `https://web.whatsapp.com/send?phone=6281283412149`;
     url += `&text=${encodeURI(message)}&app_absent=0`;
     window.open(url);
@@ -98,7 +98,7 @@ function DetailProduct() {
         object: {
           produk: productdata.name,
           harga: productdata.price,
-          jenis: "????",
+          jenis: "Skincare",
           tanggal: currentdate,
         },
       },

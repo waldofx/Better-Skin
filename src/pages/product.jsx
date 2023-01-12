@@ -70,7 +70,7 @@ function Product() {
                               width: "200px",
                               height: "40px",
                               border: "1px solid",
-                              backgroundColor: "#F5A847",
+                              backgroundColor: "#008b79",
                             }}
                             className="text-center mb-3 mt-3"
                           >
