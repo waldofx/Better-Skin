@@ -41,6 +41,13 @@ function Header() {
                   Product
                 </a>
               </li>
+              {isAdmin && (
+                <li class="nav-item active">
+                  <a href="/transactionList" class="nav-link">
+                    Transactions
+                  </a>
+                </li>
+                    )}
             </ul>
             <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
               {!isAdmin ? (

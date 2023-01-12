@@ -52,7 +52,7 @@ function Home() {
           <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
             <div class="col">
               <div class="card h-100">
-                <a href="./detailproduct">
+                <a>
                   <img
                     src="https://i.ibb.co/J3W4b2L/bg6.png"
                     class="card-img-top"
