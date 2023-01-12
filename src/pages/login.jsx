@@ -94,7 +94,8 @@ const Login = () => {
       dispatch(addAdminData(adminData));
       console.log("Data submitted: ", adminData);
       alert("Berhasil login!");
-      history.goBack();
+      // history.goBack();
+      history.push("/adminDashboard") 
     } else {
       console.log("Data submitted: ", adminData);
       alert("Gagal login! Username atau Password salah!");
