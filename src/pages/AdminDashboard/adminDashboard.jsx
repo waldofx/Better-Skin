@@ -50,7 +50,7 @@ function AdminDashboard() {
             <section id="welcome-section" class="welcome-section">
               <div class="welcome-card">
                 <div class="container">
-                  <div class="card" style={{ marginLeft: "17em" }}>
+                  <div class="card" id="welcome" style={{ marginLeft: "17em" }}>
                     <div class="title">
                       <h1>Welcome</h1>
                     </div>

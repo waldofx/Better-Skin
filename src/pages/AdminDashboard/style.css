@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background: #f0f5f9;
   }
-  .card {
+  #welcome {
     position: relative;
     margin: 110px auto;
     width: 450px;
@@ -41,15 +41,7 @@ body {
     .social {
       margin-bottom: 5px;
     }
-        a {
-     text-decoration: none !important;
-     color: black;
-      margin-left: 8px;
-      font-weight: 300;
-        }
-      i {
-        font-weight: 400;
-      }
+        
     
     
     .location {
