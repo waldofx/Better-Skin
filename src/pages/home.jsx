@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <div class="container-fluid">
+      <div class="">
         <section id="section1">
           <img
             src="https://i.ibb.co/W0s4JTg/bg1.png"
@@ -48,8 +48,10 @@ function Home() {
         </section>
         <section id="section2"></section>
         <section id="section3">
-          <p id="new">NEW FEATURED PRODUCT</p>
-          <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
+          <p id="new" className="px-3 mt-5">
+            NEW FEATURED PRODUCT
+          </p>
+          <div class="row row-cols-1 row-cols-md-4 g-4 mb-5 mx-5 mt-3">
             <div class="col">
               <div class="card h-100">
                 <a>
@@ -62,7 +64,7 @@ function Home() {
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
                     <h5 class="card-title">Face botanical set</h5>
-                    <span class="font1">$48</span>
+                    <span class="font1">Rp. 600.000</span>
                   </div>
                   <p class="card-text"></p>
                   <a className="btn btn-danger" href="/product">
@@ -81,7 +83,7 @@ function Home() {
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
                     <h5 class="card-title">Little beauty set</h5>
-                    <span class="font1">$25</span>
+                    <span class="font1">Rp. 1.020.000</span>
                   </div>
                   <p class="card-text"></p>
                   <a className="btn btn-danger" href="/product">
@@ -93,14 +95,14 @@ function Home() {
             <div class="col">
               <div class="card h-100">
                 <img
-                  src="https://i.ibb.co/85rqL85/bg8.png"
+                  src="https://i.ibb.co/sP04QFH/product4.png"
                   class="card-img-top"
                   alt="Palm Springs Road"
                 />
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
                     <h5 class="card-title">Trio travel set</h5>
-                    <span class="font1">$20</span>
+                    <span class="font1">Rp. 450.000</span>
                   </div>
                   <p class="card-text"></p>
                   <a className="btn btn-danger" href="/product">
@@ -118,8 +120,8 @@ function Home() {
                 />
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
-                    <h5 class="card-title">First experience kit</h5>
-                    <span class="font1">$30</span>
+                    <h6 class="card-title">Effaclar Purifying Forming Gel</h6>
+                    <span class="font1">Rp. 350.000</span>
                   </div>
                   <p class="card-text"></p>
                   <a className="btn btn-danger" href="/product">

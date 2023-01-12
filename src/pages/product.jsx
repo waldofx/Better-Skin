@@ -33,44 +33,58 @@ function Product() {
       <Header />
       <div>
         {/* INI ADALAH LIST PRODUK */}
-        <div className="container">
-          <h1 className="mb-5">Daftar Product</h1>
-          {isError && <p>Something Went Wrong...</p>}
-          {isLoading && <p>Now loading...</p>}
-          {!isError && !isLoading && (
-            <div>
-              <div className="container">
-                <div className="row">
-                  {productdatas.map((productdata) => (
-                    <div className="col-md-3 mb-2">
-                      <div className="card">
-                        <a href={`/detailproduct/${productdata.id}`}>
-                          <img
-                            src={productdata.img}
-                            className="card-img-top"
-                            alt="..."
-                          />
-                        </a>
-                        <div className="card-body">
-                          <div className="row">
-                            <div className="d-flex justify-content-between align-items-center mt-2 mb-2">
-                              <h5 className="card-text fw-bold">
-                                {productdata.name}
-                              </h5>
-                              <p
-                                className="card-text"
-                                style={{ fontWeight: "bold" }}
-                              >
-                                $ {productdata.price}
-                              </p>
-                            </div>
-                            <p className="card-text">
-                              {" "}
-                              Stok : {productdata.final_stock}
+
+        <h1 className="mb-5 mt-5 mx-5">Daftar Product</h1>
+        {isError && <p>Something Went Wrong...</p>}
+        {isLoading && <p>Now loading...</p>}
+        {!isError && !isLoading && (
+          <div>
+            <div className="container">
+              <div className="row">
+                {productdatas.map((productdata) => (
+                  <div className="col-md-3 mb-2">
+                    <div
+                      class="card mb-5"
+                      style={{
+                        backgroundColor: "black",
+                        width: "300px",
+                        height: "700px",
+                      }}
+                    >
+                      <a href={`/detailproduct/${productdata.id}`}>
+                        <img
+                          src={productdata.img}
+                          class="card-img-top"
+                          alt="..."
+                        />
+                      </a>
+                      <div class="card-body">
+                        <div className="col">
+                          <div className="d-flex justify-content-between align-items-center mt-2 mb-2">
+                            <h5 class="card-title text-white text-center">
+                              {productdata.name}
+                            </h5>
+                          </div>
+                          <div
+                            style={{
+                              width: "200px",
+                              height: "40px",
+                              border: "1px solid",
+                              backgroundColor: "#F5A847",
+                            }}
+                            className="text-center mb-3 mt-3"
+                          >
+                            <p className="fw-bold text-white mt-1">
+                              Rp. {productdata.price}
                             </p>
+                          </div>
+                          <div className="text-center">
                             <a
-                              className="btn btn-danger mx-2"
-                              style={{ width: "60px" }}
+                              className="btn text-black"
+                              style={{
+                                backgroundColor: "white",
+                                width: "100px",
+                              }}
                               href={`/detailproduct/${productdata.id}`}
                             >
                               Buy
@@ -79,12 +93,12 @@ function Product() {
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       <Footer />
     </div>

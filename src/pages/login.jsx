@@ -95,7 +95,7 @@ const Login = () => {
       console.log("Data submitted: ", adminData);
       alert("Berhasil login!");
       // history.goBack();
-      history.push("/adminDashboard") 
+      history.push("/adminDashboard");
     } else {
       console.log("Data submitted: ", adminData);
       alert("Gagal login! Username atau Password salah!");
@@ -111,7 +111,7 @@ const Login = () => {
         <div
           className="container"
           id="content_login"
-          style={{ minHeight: "670px" }}
+          style={{ minHeight: "650px" }}
         >
           <form
             className="row justify-content-center mt-5"
@@ -119,25 +119,7 @@ const Login = () => {
             action=""
           >
             <div className="row justify-content-md-center">
-              <div className="col-md-4">
-                <div className="card p-4 mt-5 mb-5" id="card_register">
-                  <div className="card-body p-2">
-                    <h2>New here?</h2>
-                    <p> {">"} Registration free and easy</p>
-                    <p> {">"} Save multiple shipping and address</p>
-                    <p> {">"} View and track orders</p>
-                  </div>
-                  <a
-                    href="/register"
-                    class="btn"
-                    type="button"
-                    id="btn_register"
-                  >
-                    Register Here
-                  </a>
-                </div>
-              </div>
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <div className="card p-2 mt-5 mb-5" id="card_register">
                   <div className="card-body">
                     <div className="form-group p-2">

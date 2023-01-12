@@ -61,6 +61,8 @@ function TambahDataProduct() {
             total: formData.total,
             img: formData.img,
             desc: formData.desc,
+            desc2: formData.desc2,
+            desc3: formData.desc3,
           },
         },
       });

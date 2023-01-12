@@ -101,6 +101,12 @@ function DataPengiriman() {
             {isLoading && <p>Now loading...</p>}
             {!isError && !isLoading && (
               <div className="table-responsive">
+                <div className="mt-5">
+                  <a href="/tambahDataProduct" class="btn btn-success">
+                    <i class="fa fa-plus"></i> Tambah Data Pengiriman
+                  </a>
+                </div>
+                <br></br>
                 <table
                   class="table table-striped table-bordered table-hover mt-5 mb-5"
                   id="dataTables-example"
