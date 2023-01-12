@@ -44,7 +44,7 @@ const GetUsersByLogin = gql`
 const GetPembayaranByTanggal = gql`
     query MyQuery {
         pembayaran(order_by: { tanggal: asc }) {
-            kode
+            id
             produk
             harga
             jenis

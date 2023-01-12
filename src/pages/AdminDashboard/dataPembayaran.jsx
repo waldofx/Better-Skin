@@ -26,12 +26,12 @@ function DataPembayaran() {
   //handle edit & delete
   const { deleteOrders } = useDeleteOrders();
 
-  function handleDelete(kode) {
+  function handleDelete(id) {
     return function (e) {
       if (window.confirm("Apa anda yakin ingin menghapus order ini?")) {
         deleteOrders({
           variables: {
-            kode: kode,
+            id: id,
           },
         });
         window.alert("Order terhapus!");
@@ -124,7 +124,7 @@ function DataPembayaran() {
                   {orderdatas.map((orderdata) => (
                     <tbody className="text-center">
                       <td>{no++}</td>
-                      <td>{orderdata.kode}</td>
+                      <td>{orderdata.id}</td>
                       <td>{orderdata.produk}</td>
                       <td>{orderdata.harga}</td>
                       <td>{orderdata.jenis}</td>
@@ -134,7 +134,7 @@ function DataPembayaran() {
                         <button
                           className="text-white py-2 px-2 rounded  my-4"
                           style={{ background: "red", width: "70px" }}
-                          onClick={handleDelete(orderdata.tanggal)}
+                          onClick={handleDelete(orderdata.id)}
                         >
                           Hapus
                         </button>

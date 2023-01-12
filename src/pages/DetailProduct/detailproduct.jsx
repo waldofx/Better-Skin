@@ -50,10 +50,7 @@ function DetailProduct() {
     const currentdate = new Date();
     // const date = `${currentdate.getDate()}/${currentdate.getMonth()+1}/${currentdate.getFullYear()}`;
 
-    var kodestring = Array.from(productdata)[0] + currentdate.getDate().toString;
-
     const [Order, setOrder] = useState({
-        kode: "",
         produk: "",
         harga: 0,
         jenis: "",
@@ -99,7 +96,6 @@ function DetailProduct() {
         insertOrders({
             variables: {
                 object: {
-                    kode: kodestring,
                     produk: productdata.name,
                     harga: productdata.price,
                     jenis: "????",

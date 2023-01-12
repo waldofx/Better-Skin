@@ -96,7 +96,6 @@ const UpdateUsers = gql`
 const InsertOrders = gql`
     mutation MyMutation($object: pembayaran_insert_input = {}) {
         insert_pembayaran_one(object: $object) {
-            kode
             produk
             harga
             jenis
@@ -106,11 +105,11 @@ const InsertOrders = gql`
 `;
 
 const DeleteOrders = gql`
-    mutation MyMutation($kode: Int!) {
-        delete_orders(where: { kode: { _eq: $kode } }) {
+    mutation MyMutation($id: Int!) {
+        delete_pembayaran(where: { id: { _eq: $id } }) {
             affected_rows
             returning {
-                kode
+                id
                 produk
                 harga
                 jenis
